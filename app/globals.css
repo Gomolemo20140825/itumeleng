@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --oxblood: #1b090b;
+  --wine: #2a0e11;
+  --maroon: #4b161b;
+  --bone: #f7efec;
+  --rose-grey: #cbb3af;
+  --signal: #c4161c;
+  --ink: #1d1314;
+  --rule: rgb(247 239 236 / 0.12);
+}
+
+@theme inline {
+  --color-oxblood: var(--oxblood);
+  --color-wine: var(--wine);
+  --color-maroon: var(--maroon);
+  --color-bone: var(--bone);
+  --color-rose-grey: var(--rose-grey);
+  --color-signal: var(--signal);
+  --color-ink: var(--ink);
+  --color-rule: var(--rule);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-archivo);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--oxblood);
+  color: var(--bone);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--bone);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.hero {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 38%, #6a2026 0%, transparent 70%),
+    linear-gradient(180deg, #45151a 0%, #3a1216 45%, #230b0e 100%);
+}
+
+.hero-kicker {
+  font-family: var(--font-archivo), sans-serif;
+  font-stretch: 110%;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  font-size: clamp(1.1rem, 3.4vw, 3rem);
+  line-height: 1;
+  color: #fff;
+}
+
+.hero-word {
+  font-family: var(--font-archivo), sans-serif;
+  font-stretch: 112%;
+  font-weight: 800;
+  font-size: clamp(3rem, 17.5vw, 16rem);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.hero-bar {
+  height: 3px;
+  background: #fff;
+  border-radius: 999px;
+}
+
+.sparkle {
+  position: absolute;
+  width: var(--s, 5rem);
+  height: var(--s, 5rem);
+  background:
+    radial-gradient(
+      ellipse 50% 1.2% at 50% 50%,
+      rgb(255 255 255 / 0.85),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 1.2% 50% at 50% 50%,
+      rgb(255 255 255 / 0.85),
+      transparent
+    );
+  pointer-events: none;
+}
+
+.display {
+  font-family: var(--font-archivo), sans-serif;
+  font-stretch: 108%;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+
+.figure {
+  font-family: var(--font-archivo), sans-serif;
+  font-stretch: 112%;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .chev {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
